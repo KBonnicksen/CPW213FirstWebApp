@@ -14,5 +14,11 @@ namespace AlmostEmptyWebsite.Controllers
             //returns a webpage
             return View();
         }
+
+        public IActionResult Contact()
+        {
+            ViewData["Email"] = "noreply@cptc.edu";
+            return View();
+        }
     }
 }
