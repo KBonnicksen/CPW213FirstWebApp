@@ -22,6 +22,7 @@ namespace AlmostEmptyWebsite
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+        //
         public void ConfigureServices(IServiceCollection services)
         {
             services.Configure<CookiePolicyOptions>(options =>
@@ -49,8 +50,8 @@ namespace AlmostEmptyWebsite
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
-            app.UseStaticFiles();
+            app.UseHttpsRedirection(); //browser safety
+            app.UseStaticFiles(); //allows you to use html, css, javascript
             app.UseCookiePolicy();
 
             app.UseMvc(routes =>
